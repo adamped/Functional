@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace Functional.Base
 {
-	public abstract class BaseVisualState: INotifyPropertyChanged
+	public abstract class BaseVisualPush: INotifyPropertyChanged
     {
 		public event PropertyChangedEventHandler PropertyChanged;
 
@@ -11,7 +11,7 @@ namespace Functional.Base
 			=> PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
 		object _lock = new object();
-		public void Assign<T>(params (string propertyName, T value)[] assignments)
+		public void Send<T>(params (string propertyName, T value)[] assignments)
 		{
 			lock (_lock)
 				foreach (var assign in assignments)

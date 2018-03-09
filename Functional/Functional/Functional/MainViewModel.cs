@@ -1,20 +1,23 @@
 ﻿using Functional.Base;
+using Functional.Extensions;
 using Xamarin.Forms;
 
 namespace Functional
 {
-	public class MainViewModel : BaseViewModel<VisualState, Controller> { }
+	public class MainViewModel : BaseViewModel<VisualPush, Controller> { }
 
-	public class VisualState : BaseVisualState
+	public class VisualPush : BaseVisualPush
 	{
-		public string LabelValue { get; private set; } = "Starting";
+		public string LabelValue { get; private set; }
 	}
 
-	public class Controller : BaseController<VisualState>
+	public class Controller : BaseController<VisualPush>
 	{
 		public Command<string> UpdateCommand => new Command<string>((text) =>
 		{
-			VisualState.Assign(((nameof(VisualState.LabelValue), text)));
+			var stateChange = ((nameof(VisualPush.LabelValue), text));
+
+			VisualPush.Send(stateChange);
 		});
 	}
 

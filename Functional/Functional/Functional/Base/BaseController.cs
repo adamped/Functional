@@ -1,11 +1,11 @@
 ﻿namespace Functional.Base
 {
-	public abstract class BaseController<VisualStateType> where VisualStateType : BaseVisualState, new()
+	public abstract class BaseController<VisualStateType> where VisualStateType : BaseVisualPush, new()
 	{
-		public readonly VisualStateType VisualState;
+		public readonly VisualStateType VisualPush;
 		public BaseController()
 		{
-			VisualState = new VisualStateType();
+			VisualPush = new VisualStateType();
 		}
     }
 }
