@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Functional"
              x:Class="Functional.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
+	<Label Text="{Binding VisualState.LabelValue}" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
 
