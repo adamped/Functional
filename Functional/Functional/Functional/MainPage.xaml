@@ -4,8 +4,13 @@
              xmlns:local="clr-namespace:Functional"
              x:Class="Functional.MainPage">
 
-	<Label Text="{Binding VisualState.LabelValue}" 
+    <StackLayout>
+        <Label Text="{Binding VisualState.LabelValue}" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
+        <Entry x:Name="RandomEntry" />
+        <Button Text="Hello" Command="{Binding Controller.UpdateCommand}" CommandParameter="{Binding Text, Source={x:Reference RandomEntry}}" />
+    </StackLayout>
+
 
 </ContentPage>

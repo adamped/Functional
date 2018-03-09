@@ -3,17 +3,22 @@ using System.Runtime.CompilerServices;
 
 namespace Functional.Base
 {
-	public abstract class BaseVisualState
+	public abstract class BaseVisualState: INotifyPropertyChanged
     {
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public void OnPropertyChanged(string name = "")
 			=> PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
-		public void SetValue<T>(ref T referenceValue, T newValue, [CallerMemberName]string name = "")
+		object _lock = new object();
+		public void Assign<T>(params (string propertyName, T value)[] assignments)
 		{
-			referenceValue = newValue;
-			OnPropertyChanged(name);
+			lock (_lock)
+				foreach (var assign in assignments)
+				{
+					this.GetType().GetProperty(assign.propertyName).SetValue(this, assign.value);
+					OnPropertyChanged(assign.propertyName);
+				}
 		}
 
 	}

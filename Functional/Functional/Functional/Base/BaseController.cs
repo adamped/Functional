@@ -7,7 +7,5 @@
 		{
 			VisualState = new VisualStateType();
 		}
-
-		public abstract void Initialize();
     }
 }

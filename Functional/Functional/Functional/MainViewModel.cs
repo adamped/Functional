@@ -1,4 +1,5 @@
 ﻿using Functional.Base;
+using Xamarin.Forms;
 
 namespace Functional
 {
@@ -6,19 +7,15 @@ namespace Functional
 
 	public class VisualState : BaseVisualState
 	{
-		string _labelValue;
-		public string LabelValue {
-			get => _labelValue;
-			set => SetValue(ref _labelValue, value);
-		}
+		public string LabelValue { get; private set; } = "Starting";
 	}
 
 	public class Controller : BaseController<VisualState>
 	{
-		public override void Initialize()
+		public Command<string> UpdateCommand => new Command<string>((text) =>
 		{
-			VisualState.LabelValue = "Hello";
-		}
+			VisualState.Assign(((nameof(VisualState.LabelValue), text)));
+		});
 	}
 
 }
