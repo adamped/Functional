@@ -3,29 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Functional"
              xmlns:ext="clr-namespace:Functional.Extensions"
-             x:Name="this"
              x:Class="Functional.MainPage">
-    
-    <!-- Data Collection
-     This is just part of my failed attempt to get an array through.
-     It actually all works, except the one part of {Text, Source={x:Reference RandomEntry}}
-     For some reason it can't find the element, if its in an array
-    
-    <ext:TupleCollection x:Name="Collection" BindingContext="{x:Reference this}">
-        <ext:TupleCollection.Collection>
-            <x:Array Type="{x:Type ext:Data}">
-                <ext:Data Value="{Text, Source={x:Reference RandomEntry}}" />
-            </x:Array>
-        </ext:TupleCollection.Collection>
-    </ext:TupleCollection>-->
 
-    <StackLayout>
-        <Label Text="{Binding VisualPush.LabelValue}" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-        <Entry x:Name="RandomEntry" />
-        <Button Text="Update" Command="{Binding Controller.UpdateCommand}" 
-                CommandParameter="{Binding Text, Source={x:Reference RandomEntry}}"/>
+    <StackLayout Padding="0,20,0,0">
+        <Label Text="{Binding LabelValue}" />
+        <Entry Text="{Binding RandomEntry}" />
+        <Entry Text="{Binding OtherEntry}" />
+        <Button Text="Update" 
+                Command="{Binding UpdateCommand}" />
     </StackLayout>
 
 </ContentPage>

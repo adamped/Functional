@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Functional"
+             xmlns:ex="clr-namespace:Functional.Extensions"
+             x:Class="Functional.FunctionalPage">
+
+    <StackLayout Padding="0,20,0,0">
+        <Label Text="{Binding View.LabelValue}" />
+        <Entry x:Name="RandomEntry" />
+        <Entry x:Name="OtherEntry" />
+        <Button Text="Update" Command="{Binding Controller.UpdateCommand}">
+            <Button.CommandParameter>
+                <ex:Snapshot>
+                    <ex:Data Text="{x:Reference RandomEntry}" />
+                    <ex:Data Text="{x:Reference OtherEntry}" />
+                </ex:Snapshot>
+            </Button.CommandParameter>
+        </Button>
+    </StackLayout>
+
+</ContentPage>

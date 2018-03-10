@@ -13,7 +13,7 @@ namespace Functional
 		{
 			InitializeComponent();
 
-			MainPage = new Functional.MainPage();
+			MainPage = new Functional.FunctionalPage();
 		}
 
 		protected override void OnStart ()

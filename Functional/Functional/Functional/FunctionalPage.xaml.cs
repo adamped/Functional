@@ -2,9 +2,9 @@
 
 namespace Functional
 {
-	public partial class MainPage : ContentPage
+	public partial class FunctionalPage : ContentPage
 	{
-		public MainPage()
+		public FunctionalPage()
 		{
 			this.BindingContext = new FunctionalViewModel();
 			InitializeComponent();

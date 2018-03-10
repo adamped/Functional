@@ -8,4 +8,13 @@
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="FunctionalPage.xaml.cs">
+      <DependentUpon>FunctionalPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>
