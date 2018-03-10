@@ -5,12 +5,11 @@
              xmlns:ext="clr-namespace:Functional.Extensions"
              x:Class="Functional.MainPage">
 
-    <StackLayout Padding="0,20,0,0">
+    <StackLayout Padding="20">
         <Label Text="{Binding LabelValue}" />
         <Entry Text="{Binding RandomEntry}" />
         <Entry Text="{Binding OtherEntry}" />
-        <Button Text="Update" 
-                Command="{Binding UpdateCommand}" />
+        <Button Text="Update" Command="{Binding UpdateCommand}" />
     </StackLayout>
 
 </ContentPage>

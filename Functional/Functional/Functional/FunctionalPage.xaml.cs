@@ -7,7 +7,7 @@ namespace Functional
 		public FunctionalPage()
 		{
 			this.BindingContext = new FunctionalViewModel();
-			InitializeComponent();
+			InitializeComponent();			
 		}
 
 	}

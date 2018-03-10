@@ -29,12 +29,12 @@ namespace Functional
 
 		public Command UpdateCommand => new Command(() =>
 		{
-			LabelValue = ImpureFunction();
+			LabelValue = PureFunction(RandomEntry, OtherEntry);
 		});
 
-		string ImpureFunction()
+		string PureFunction(string firstName, string lastName)
 		{
-			return $"{RandomEntry} {OtherEntry}";
+			return $"{firstName} {lastName}";
 		}
 	}
 

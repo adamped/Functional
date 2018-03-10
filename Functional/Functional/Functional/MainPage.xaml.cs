@@ -6,7 +6,7 @@ namespace Functional
 	{
 		public MainPage()
 		{
-			this.BindingContext = new FunctionalViewModel();
+			this.BindingContext = new MvvmViewModel();
 			InitializeComponent();
 		}
 

@@ -8,9 +8,9 @@ namespace Functional.Extensions
 {
 	[ContentProperty("Items")]
 	[AcceptEmptyServiceProvider]
-	public class SnapshotExtension : IMarkupExtension<Array>
+	public class SnapExtension : IMarkupExtension<Array>
 	{
-		public SnapshotExtension()
+		public SnapExtension()
 		{
 			Items = new List<object>();
 		}
