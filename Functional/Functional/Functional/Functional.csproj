@@ -9,6 +9,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Framework.csproj" />
+    <ProjectReference Include="..\..\..\FunctionalFSharp\FunctionalFSharp.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

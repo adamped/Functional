@@ -7,6 +7,8 @@ namespace Functional
 		public FunctionalPage()
 		{
 			this.BindingContext = new FunctionalViewModel();
+			// This calls the FSharp version
+			//this.BindingContext = new FunctionalFSharp.FunctionalFSharpViewModel();
 			InitializeComponent();			
 		}
 
