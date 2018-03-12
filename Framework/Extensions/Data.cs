@@ -4,16 +4,18 @@ namespace Functional.Extensions
 {
 	public class Data : BindableObject
 	{
-		public static readonly BindableProperty ValueProperty =
-		BindableProperty.Create(nameof(Text), typeof(Entry), typeof(Data), default(Entry));
+		public static readonly BindableProperty TextProperty =
+		BindableProperty.Create(nameof(Text), typeof(string), typeof(Data), default(string));
 
-		public Entry Text
+		public string Text
 		{
-			get => (Entry)GetValue(ValueProperty);
-			set => SetValue(ValueProperty, value);
+			get => (string)GetValue(TextProperty);
+			set => SetValue(TextProperty, value);
 		}
 
-		public string Value => Text?.Text;
-		
+		public string Value => Text;
+
+
+
 	}
 }

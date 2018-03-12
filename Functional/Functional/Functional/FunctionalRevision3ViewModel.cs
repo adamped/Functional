@@ -1,14 +1,13 @@
 ﻿using Framework;
-using Functional.Extensions;
 using Xamarin.Forms;
 
 namespace Functional
 {
-	public class FunctionalRevision3ViewModel : Framework.Base.BaseViewModel {
-				
-		public Command<Data[]> UpdateCommand => new Command<Data[]>((data) =>
+	public class FunctionalRevision3ViewModel : Framework.Base.BaseViewModel
+	{				
+		public Command<Args> UpdateCommand => new Command<Args>((data) =>
 		{
-			var newValue = PureFunction(data[0].Value, data[1].Value);
+			var newValue = PureFunction(data[0].Text, data[1].Text);
 
 			Push(("LabelValue", newValue));
 		});

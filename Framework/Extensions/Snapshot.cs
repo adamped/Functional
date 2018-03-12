@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Framework;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -8,32 +9,30 @@ namespace Functional.Extensions
 {
 	[ContentProperty("Items")]
 	[AcceptEmptyServiceProvider]
-	public class SnapExtension : IMarkupExtension<Array>
+	public class SnapshotExtension : IMarkupExtension<Args>
 	{
-		public SnapExtension()
+		public SnapshotExtension()
 		{
 			Items = new List<object>();
 		}
 
 		public IList Items { get; }
 
-		public Type Type => typeof(Data);
-
-		public Array ProvideValue(IServiceProvider serviceProvider)
+		public Args ProvideValue(IServiceProvider serviceProvider)
 		{
 			if (Items == null)
 				return null;
 
-			var array = Array.CreateInstance(Type, Items.Count);
+			var snapshot = new Args();
 			for (var i = 0; i < Items.Count; i++)
-				((IList)array)[i] = Items[i];
+				snapshot.Add(((Data)Items[i]));
 
-			return array;
+			return snapshot;
 		}
 
 		object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
 		{
-			return (this as IMarkupExtension<Array>).ProvideValue(serviceProvider);
+			return (this as IMarkupExtension<Args>).ProvideValue(serviceProvider);
 		}
 	}
 }

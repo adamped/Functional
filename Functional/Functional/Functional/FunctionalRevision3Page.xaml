@@ -9,23 +9,14 @@
         <Label Text="{e:Pull LabelValue}" />
         <Entry x:Name="RandomEntry" />
         <Entry x:Name="OtherEntry" />
-        <Button Text="Update" Command="{Binding UpdateCommand}" 
-                CommandParameter="{e:Multi RandomEntry,OtherEntry}" />
-    </StackLayout>
-    
-    <!-- or the more verbose but more powerful way -->
-    <!--<StackLayout Padding="20">
-        <Label Text="{Binding View.LabelValue}" />
-        <Entry x:Name="RandomEntry" />
-        <Entry x:Name="OtherEntry" />
-        <Button Text="Update" Command="{e:Cmd UpdateCommand}">
+        <Button Text="Update" Command="{Binding UpdateCommand}">
             <Button.CommandParameter>
-                <e:Snap>
-                    <e:Data Text="{e:Ref RandomEntry}" />
-                    <e:Data Text="{e:Ref OtherEntry}" />
-                </e:Snap>
+                <e:Snapshot>
+                    <e:Data Text="{Binding Text, Source={x:Reference RandomEntry}" />
+                    <e:Data Text="{Binding Text, Source={x:Reference OtherEntry}" />
+                </e:Snapshot>
             </Button.CommandParameter>
         </Button>
-    </StackLayout>-->
+    </StackLayout>
 
 </ContentPage>

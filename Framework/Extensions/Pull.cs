@@ -23,7 +23,7 @@ namespace Functional.Extensions
 			{
 				var args = e as PropertyChangedValueEventArgs;
 
-				if (args.PropertyName == "LabelValue") // Just here for testing atm.
+				if (args.PropertyName == Text) // Just here for testing atm.
 					pvt.TargetObject.GetType().GetProperty((pvt.TargetProperty as BindableProperty).PropertyName).SetValue(pvt.TargetObject, args.Value);
 
 			};
