@@ -2,11 +2,11 @@
 
 namespace Functional
 {
-	public partial class FunctionalPage : ContentPage
+	public partial class FunctionalRevision2Page : ContentPage
 	{
-		public FunctionalPage()
+		public FunctionalRevision2Page()
 		{
-			this.BindingContext = new FunctionalViewModel();
+			this.BindingContext = new FunctionalRevision2ViewModel();
 			// This calls the FSharp version
 			//this.BindingContext = new FunctionalFSharp.FunctionalFSharpViewModel();
 			InitializeComponent();			

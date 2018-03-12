@@ -10,15 +10,17 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Framework\Framework.csproj" />
-    <ProjectReference Include="..\..\..\FunctionalFSharp\FunctionalFSharp.fsproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FunctionalRevision3Page.xaml.cs">
+      <DependentUpon>FunctionalRevision3Page.xaml</DependentUpon>
+    </Compile>
     <Compile Update="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="FunctionalPage.xaml.cs">
-      <DependentUpon>FunctionalPage.xaml</DependentUpon>
+    <Compile Update="FunctionalRevision2Page.xaml.cs">
+      <DependentUpon>FunctionalRevision2Page.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace Functional
 {
-	public class FunctionalViewModel : DefineViewModel<View, Controller> { }
+	public class FunctionalRevision2ViewModel : DefineViewModel<View, Controller> { }
 
 	public class View : BaseViewState
 	{

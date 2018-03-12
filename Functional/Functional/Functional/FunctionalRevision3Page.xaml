@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Functional"
+             xmlns:e="clr-namespace:Functional.Extensions;assembly=Framework"
+             x:Class="Functional.FunctionalRevision3Page">
+
+    <StackLayout Padding="20">
+        <Label Text="{e:Pull LabelValue}" />
+        <Entry x:Name="RandomEntry" />
+        <Entry x:Name="OtherEntry" />
+        <Button Text="Update" Command="{Binding UpdateCommand}" 
+                CommandParameter="{e:Multi RandomEntry,OtherEntry}" />
+    </StackLayout>
+    
+    <!-- or the more verbose but more powerful way -->
+    <!--<StackLayout Padding="20">
+        <Label Text="{Binding View.LabelValue}" />
+        <Entry x:Name="RandomEntry" />
+        <Entry x:Name="OtherEntry" />
+        <Button Text="Update" Command="{e:Cmd UpdateCommand}">
+            <Button.CommandParameter>
+                <e:Snap>
+                    <e:Data Text="{e:Ref RandomEntry}" />
+                    <e:Data Text="{e:Ref OtherEntry}" />
+                </e:Snap>
+            </Button.CommandParameter>
+        </Button>
+    </StackLayout>-->
+
+</ContentPage>
